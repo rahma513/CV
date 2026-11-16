@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rahma Gamal | AI & Data Science Engineer</title>
+  <meta name="description" content="Personal CV of Rahma Gamal, AI & Data Science Engineer based in Cairo, Egypt.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f6f0e8;
+      --card: #fffdf9;
+      --ink: #2b2018;
+      --muted: #6f6256;
+      --line: #e6dccf;
+      --accent: #a8562a;
+      --accent-soft: #f1e0d2;
+      --side: #2b2018;
+      --side-ink: #f6f0e8;
+      --side-muted: #cdbfae;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #17110d;
+        --card: #211914;
+        --ink: #f1e8dc;
+        --muted: #b3a493;
+        --line: #3a2e25;
+        --accent: #e08a55;
+        --accent-soft: #3a2619;
+        --side: #120d0a;
+        --side-ink: #f1e8dc;
+        --side-muted: #b3a493;
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      padding: 32px 16px;
+    }
+    a { color: inherit; }
+    h1, h2, h3 { font-family: "Fraunces", Georgia, serif; line-height: 1.2; }
+
+    .cv {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      background: var(--card);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(43, 32, 24, .12);
+    }
+
+    /* ---------- Sidebar ---------- */
+    aside {
+      background: var(--side);
+      color: var(--side-ink);
+      padding: 36px 28px;
+    }
+    .photo {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: 50% 50%;
+      display: block;
+      margin: 0 auto 22px;
+      border: 4px solid var(--accent);
+      background: #fff;
+    }
+    aside h2 {
+      font-size: 13px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-family: "Inter", sans-serif;
+      font-weight: 600;
+      margin: 28px 0 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid rgba(255, 255, 255, .12);
+    }
+    aside ul { list-style: none; font-size: 14px; }
+    aside li { margin-bottom: 8px; word-break: break-word; }
+    aside .label { display: block; font-size: 12px; color: var(--side-muted); }
+    aside a { text-decoration: none; border-bottom: 1px dotted var(--side-muted); }
+    aside a:hover { color: var(--accent); }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tags span {
+      font-size: 12px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .08);
+    }
+
+    /* ---------- Main ---------- */
+    main { padding: 40px 44px; }
+    header h1 { font-size: 42px; letter-spacing: -.01em; }
+    header .role { color: var(--accent); font-weight: 600; font-size: 18px; margin-top: 4px; }
+
+    section { margin-top: 34px; }
+    section > h2 {
+      font-size: 22px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    section > h2::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
+    .item { margin-bottom: 22px; }
+    .item-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .item h3 { font-size: 17px; }
+    .item .org { color: var(--muted); font-size: 14px; }
+    .date {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--accent);
+      background: var(--accent-soft);
+      padding: 2px 10px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .item ul { margin: 8px 0 0 18px; font-size: 14.5px; }
+    .item li { margin-bottom: 4px; }
+    .item li::marker { color: var(--accent); }
+
+    .skills dl { display: grid; grid-template-columns: 170px 1fr; gap: 8px 16px; font-size: 14.5px; }
+    .skills dt { font-weight: 600; }
+    .skills dd { color: var(--muted); }
+
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; }
+    .plain ul { margin-left: 18px; font-size: 14.5px; }
+    .plain li { margin-bottom: 6px; }
+    .plain li::marker { color: var(--accent); }
+
+    footer { text-align: center; color: var(--muted); font-size: 13px; margin-top: 24px; }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 800px) {
+      .cv { grid-template-columns: 1fr; }
+      main { padding: 28px 22px; }
+      header h1 { font-size: 34px; }
+      .skills dl { grid-template-columns: 1fr; gap: 2px; }
+      .skills dd { margin-bottom: 10px; }
+      .two-col { grid-template-columns: 1fr; }
+    }
+
+    /* ---------- Print ---------- */
+    @media print {
+      body { background: #fff; padding: 0; }
+      .cv { box-shadow: none; border-radius: 0; }
+      footer { display: none; }
+      * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .item { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="cv">
+
+    <!-- ===== Sidebar ===== -->
+    <aside>
+      <img class="photo" src="photo.jpg" alt="Portrait of Rahma Gamal">
+
+      <h2>Contact</h2>
+      <ul>
+        <li><span class="label">Location</span>Cairo, Egypt</li>
+        <li><span class="label">Phone</span><a href="tel:+201002411361">+20 100 241 1361</a></li>
+        <li><span class="label">Email</span><a href="mailto:rahmagamaloun@gmail.com">rahmagamaloun@gmail.com</a></li>
+        <li><span class="label">LinkedIn</span><a href="https://www.linkedin.com/in/rahma-gamal-992ba9343" target="_blank" rel="noopener">rahma-gamal-992ba9343</a></li>
+        <li><span class="label">GitHub</span><a href="https://github.com/rahma513" target="_blank" rel="noopener">github.com/rahma513</a></li>
+      </ul>
+
+      <h2>Languages</h2>
+      <ul>
+        <li>Arabic <span class="label" style="display:inline">· Native</span></li>
+        <li>English <span class="label" style="display:inline">· Fluent</span></li>
+        <li>Russian <span class="label" style="display:inline">· Intermediate</span></li>
+        <li>French <span class="label" style="display:inline">· Intermediate</span></li>
+      </ul>
+
+      <h2>Soft Skills</h2>
+      <div class="tags">
+        <span>Analytical Thinking</span>
+        <span>Problem Solving</span>
+        <span>Teamwork</span>
+        <span>Technical Documentation</span>
+        <span>Communication</span>
+      </div>
+    </aside>
+
+    <!-- ===== Main content ===== -->
+    <main>
+      <header>
+        <h1>Rahma Gamal</h1>
+        <p class="role">AI &amp; Data Science Engineer</p>
+      </header>
+
+      <section id="summary">
+        <h2>Summary</h2>
+        <p>AI &amp; Data Science Engineer with hands-on experience in Python, SQL, data analysis, machine learning, NLP, and computer vision. Experienced in developing academic and practical AI projects, including handwritten digit recognition, sign language translation, and lip reading. Strong ability to analyze and prepare data, build machine learning and deep learning models, and communicate technical concepts clearly. Interested in Artificial Intelligence, Data Science, Machine Learning, NLP, and LLM applications.</p>
+      </section>
+
+      <section id="skills" class="skills">
+        <h2>Technical Skills</h2>
+        <dl>
+          <dt>Programming Languages</dt>
+          <dd>Python, SQL, R, C++</dd>
+          <dt>Data Analysis &amp; Visualization</dt>
+          <dd>Pandas, NumPy, Matplotlib, Seaborn, Excel</dd>
+          <dt>AI &amp; Machine Learning</dt>
+          <dd>Machine Learning, Deep Learning, NLP, Computer Vision, CNN, LSTM, BiLSTM</dd>
+          <dt>NLP</dt>
+          <dd>Text Preprocessing, Tokenization, Stopword Removal, TF-IDF, Word2Vec, GloVe, BERT, Text Classification, Sentiment Analysis, Named Entity Recognition</dd>
+          <dt>Computer Vision</dt>
+          <dd>OpenCV, MediaPipe, Image Processing, Hand Gesture Recognition</dd>
+          <dt>Development Tools</dt>
+          <dd>Git, GitHub, Jupyter Notebook, Google Colab, VS Code</dd>
+        </dl>
+      </section>
+
+      <section id="experience">
+        <h2>Experience</h2>
+
+        <article class="item">
+          <div class="item-head">
+            <div>
+              <h3>Intern – Agentic AI &amp; LLMs</h3>
+              <div class="org">DFPI</div>
+            </div>
+            <span class="date">2026 – Present</span>
+          </div>
+          <ul>
+            <li>Received hands-on training in Large Language Models (LLMs), Generative AI, and Agentic AI systems.</li>
+            <li>Explored practical applications of LLMs and AI-based solutions.</li>
+            <li>Prepared bilingual Arabic/English technical revision materials to simplify complex AI concepts.</li>
+            <li>Worked on small-scale projects involving data analysis and visualization.</li>
+            <li>Developed a practical understanding of AI concepts and their real-world applications.</li>
+          </ul>
+        </article>
+
+        <article class="item">
+          <div class="item-head">
+            <div>
+              <h3>NLP Intern</h3>
+              <div class="org">National Telecommunication Institute (NTI)</div>
+            </div>
+            <span class="date">2026 – Present</span>
+          </div>
+          <ul>
+            <li>Applied NLP techniques including text preprocessing, tokenization, stopword removal, and text normalization.</li>
+            <li>Worked with TF-IDF and word embeddings, including Word2Vec, GloVe, and BERT.</li>
+            <li>Built machine learning models for text classification and sentiment analysis.</li>
+            <li>Practiced Named Entity Recognition (NER) and information extraction.</li>
+            <li>Developed small projects including customer feedback analysis, news entity extraction, and a chatbot prototype.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+
+        <article class="item">
+          <div class="item-head">
+            <h3>Handwritten Digit Recognition</h3>
+            <span class="date">November 2025</span>
+          </div>
+          <ul>
+            <li>Developed a Convolutional Neural Network (CNN) to classify handwritten digits using the MNIST dataset.</li>
+            <li>Performed data preprocessing and prepared the dataset for deep learning.</li>
+            <li>Built a simple interactive interface for real-time digit prediction.</li>
+            <li>Evaluated model performance using classification metrics.</li>
+          </ul>
+        </article>
+
+        <article class="item">
+          <div class="item-head">
+            <h3>Sign Language Translator</h3>
+            <span class="date">February 2026</span>
+          </div>
+          <ul>
+            <li>Developed a real-time computer vision-based sign language translation system.</li>
+            <li>Used MediaPipe and OpenCV to detect and analyze hand gestures.</li>
+            <li>Converted recognized gestures into English text with Arabic translation.</li>
+            <li>Integrated Text-to-Speech functionality for accessible communication.</li>
+            <li>Used Google Translate API for language translation.</li>
+          </ul>
+        </article>
+
+        <article class="item">
+          <div class="item-head">
+            <h3>Lip Reading for Mute Speech</h3>
+            <span class="date">2026</span>
+          </div>
+          <ul>
+            <li>Designed a deep learning system for recognizing silent speech from lip movements.</li>
+            <li>Implemented a CNN-BiLSTM-Attention architecture for visual speech recognition.</li>
+            <li>Applied CTC Loss and CTC Decoding for sequence prediction.</li>
+            <li>Worked with video-based facial and lip movement features.</li>
+            <li>The project aims to support communication accessibility for people with speech disabilities.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section id="education">
+        <h2>Education</h2>
+        <article class="item">
+          <div class="item-head">
+            <div>
+              <h3>Bachelor’s Degree in Artificial Intelligence</h3>
+              <div class="org">Egyptian Russian University (ERU), Egypt</div>
+            </div>
+            <span class="date">Sep 2023 – Expected Jul 2027</span>
+          </div>
+        </article>
+      </section>
+
+      <section id="certifications" class="plain">
+        <h2>Certifications</h2>
+        <ul>
+          <li>IBM Skills Academy – Artificial Intelligence &amp; Data Science</li>
+          <li>Python Programming Certificate – MaharatTech — March 2025</li>
+          <li>SQL Fundamentals – Sololearn — December 2024</li>
+          <li>R Programming – Introduction to Data Science – Alison — May 2024</li>
+          <li>EF SET English Certificate – B2 Upper Intermediate — Score: 53/100 — March 2025</li>
+        </ul>
+      </section>
+    </main>
+  </div>
+
+  <footer>© 2026 Rahma Gamal</footer>
+</body>
+</html>
