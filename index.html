@@ -10,30 +10,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f6f0e8;
-      --card: #fffdf9;
+      --bg: #ffffff;
+      --card: #ffffff;
       --ink: #2b2018;
       --muted: #6f6256;
       --line: #e6dccf;
       --accent: #a8562a;
-      --accent-soft: #f1e0d2;
-      --side: #2b2018;
-      --side-ink: #f6f0e8;
-      --side-muted: #cdbfae;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #17110d;
-        --card: #211914;
-        --ink: #f1e8dc;
-        --muted: #b3a493;
-        --line: #3a2e25;
-        --accent: #e08a55;
-        --accent-soft: #3a2619;
-        --side: #120d0a;
-        --side-ink: #f1e8dc;
-        --side-muted: #b3a493;
-      }
+      --accent-soft: #f4f1ed;
+      --side: #ffffff;
+      --side-ink: #2b2018;
+      --side-muted: #6f6256;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -55,7 +41,7 @@
       background: var(--card);
       border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 20px 50px rgba(43, 32, 24, .12);
+      box-shadow: 0 0 0 1px var(--line), 0 12px 32px rgba(43, 32, 24, .08);
     }
 
     /* ---------- Sidebar ---------- */
@@ -63,6 +49,7 @@
       background: var(--side);
       color: var(--side-ink);
       padding: 36px 28px;
+      border-right: 1px solid var(--line);
     }
     .photo {
       width: 180px;
@@ -84,7 +71,7 @@
       font-weight: 600;
       margin: 28px 0 10px;
       padding-bottom: 6px;
-      border-bottom: 1px solid rgba(255, 255, 255, .12);
+      border-bottom: 1px solid var(--line);
     }
     aside ul { list-style: none; font-size: 14px; }
     aside li { margin-bottom: 8px; word-break: break-word; }
@@ -96,7 +83,7 @@
       font-size: 12px;
       padding: 3px 10px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, .08);
+      background: var(--accent-soft);
     }
 
     /* ---------- Main ---------- */
